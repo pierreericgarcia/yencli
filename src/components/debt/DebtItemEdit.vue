@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     editDebt() {
-        db.ref('users/1igUUtmNeJPTs9GnRoiUw9tUtvK2/debts/' + this.index).set({
+        db.ref('users/' + this.$store.state.user.uid + '/debts/' + this.index).set({
           client: this.debt.client,
           amount: this.debt.amount,
           mode: 'DebtItem',

@@ -28,7 +28,7 @@
         width="30px" />
         Mes yenclis
       </router-link>
-      <router-link tag="div" to="/" class="nav-item">
+      <router-link tag="div" to="/signin" class="nav-item" @click.native="signOut">
         <img
         src="../assets/power.svg"
         height="30px"
@@ -40,8 +40,15 @@
 </template>
 
 <script>
-export default {
+import Firebase from 'firebase';
 
+export default {
+  methods: {
+    signOut() {
+      Firebase.auth().signOut();
+      window.location.reload();
+    }
+  }
 }
 </script>
 
