@@ -4,7 +4,7 @@
       <input v-model.number="debt.amount" type="number"/>
       <input v-model="debt.client" type="text" />
       <input v-model="debt.refundAt" type="text" />
-      <button @click="editDebt">Save Changes</button>
+      <button @click="editDebt">Save</button>
     </div>
   </div>
 </template>
@@ -16,21 +16,18 @@ export default {
   props: {
     debt: {
       type: Object
-    },
-    index: {
-      type: Number
     }
   },
   methods: {
     editDebt() {
-        db.ref('users/' + this.$store.state.user.uid + '/debts/' + this.index).set({
-          client: this.debt.client,
-          amount: this.debt.amount,
-          mode: 'DebtItem',
-          refundAt: this.debt.refundAt
+        db.ref('users/' + this.$store.state.user.uid + '/debts/' + this.debt.id).update({
+          "client": this.debt.client,
+          "amount": this.debt.amount,
+          "mode": 'DebtItem',
+          "refundAt": this.debt.refundAt
         });
         this.$emit('debtSave', this.debt);
-      }
+    }
   }
 }
 </script>

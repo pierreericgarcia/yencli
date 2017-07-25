@@ -4,6 +4,7 @@
       <p>
         Total: {{computeAmount()}}€
       </p>
+      <label>Montrer les dettes payées : </label><input type="checkbox" v-model="$store.state.includePaidOnes" />
     </div>
   </div>
 </template>
@@ -18,10 +19,19 @@ export default {
   methods: {
     computeAmount() {
       let debtSum = 0;
-      this.debts.forEach((debt) => {
-        debtSum += debt.amount;
-      });
-      return debtSum;
+      if (this.$store.state.includePaidOnes === true) {
+        this.debts.forEach((debt) => {
+          debtSum += debt.amount;
+        });
+        return debtSum;
+      } else {
+        this.debts.filter(function(debt) {
+          return debt.status === "pending";
+        }).forEach((debt) => {
+          debtSum += debt.amount;
+        });
+        return debtSum;
+      }
     }
   }
 }

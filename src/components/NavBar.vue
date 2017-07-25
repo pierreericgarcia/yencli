@@ -21,13 +21,6 @@
         width="30px" />
         Nouveau cred
       </router-link>
-      <router-link tag="div" to="/clients" class="nav-item">
-        <img
-        src="../assets/user.svg"
-        height="30px"
-        width="30px" />
-        Mes yenclis
-      </router-link>
       <router-link tag="div" to="/signin" class="nav-item" @click.native="signOut">
         <img
         src="../assets/power.svg"

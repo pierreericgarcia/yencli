@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <form>
+  <div class="boxed-view__box">
+    <h3>Connexion :</h3>
+    <form class="boxed-view__form">
       <label>email:</label>
       <input v-model="email" type="text"/>
       <label>password:</label>

@@ -8,5 +8,4 @@ export const routes = [
   { path: '/debts', component: DebtMain },
   { path: '/login', component: LoginMain },
   { path: '/creator', component: CreatorMain },
-  { path: '/clients', component: ClientMain },
 ];

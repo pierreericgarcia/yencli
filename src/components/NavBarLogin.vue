@@ -2,6 +2,9 @@
   <div class="container">
     <div class="nav-container">
       <div class="nav-item">
+        <p>
+          yencli
+        </p>
           <img
           src="../assets/yencli-logo.png"
           height="30px"
@@ -29,7 +32,7 @@ export default {
     width: 80%;
     justify-content: space-between;
     color: white;
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
 
   .nav-item {
@@ -41,5 +44,6 @@ export default {
 
   img {
     margin-right: 10px;
+    margin-left: 10px;
   }
 </style>
