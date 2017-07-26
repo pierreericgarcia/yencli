@@ -32,23 +32,6 @@ export default {
           var errorMessage = error.message;
           alert(errorMessage);
         });
-        Firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            db.ref('users/' + user.uid).set({
-              "debts": {
-                "demoDebt": {
-                  "amount": 40,
-                  "client": "Thomas",
-                  "refundAt": Date(),
-                  "mode": 'DebtItem',
-                  "status": "pending",
-                  "createdAt": Date(),
-                  "id": "demoDebt"
-                }
-              }
-            });
-          }
-        }.bind(this))
        },
      }
 }

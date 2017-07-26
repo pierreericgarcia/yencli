@@ -4,7 +4,8 @@
     <p>{{debt.client}}</p>
     <p>{{debt.refundAt}}</p>
     <button @click="$emit('debtEdit', debt)" class="button button--neutral">Edit</button>
-    <button @click="payDebt" class="button">Paid</button>
+    <button v-if="debt.status === 'pending'"  @click="payDebt" class="button">Paid</button>
+    <button v-else  @click="unpayDebt" class="button button--danger">Unpaid</button>
   </div>
 </template>
 
@@ -22,7 +23,12 @@ export default {
       db.ref('users/' + this.$store.state.user.uid + '/debts/' + this.debt.id).update({
         "status": "paid"
       });
-    }
+    },
+    unpayDebt() {
+      db.ref('users/' + this.$store.state.user.uid + '/debts/' + this.debt.id).update({
+        "status": "pending"
+      });
+    },
   }
 }
 </script>
@@ -34,6 +40,7 @@ export default {
     font-size: 1.6rem;
     border: .1rem solid black;
     border-radius: 15px;
+    background-color: #F3F3F3;
   }
 
   .debt-item--paid {
