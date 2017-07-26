@@ -4,7 +4,7 @@
       <p class="total-amount">
         Total: <span>{{computeAmount()}}€</span>
       </p>
-      <label>Montrer les creds payées : </label><input type="checkbox" v-model="$store.state.includePaidOnes" />
+      <label>Montrer les creds payés : </label><input type="checkbox" v-model="$store.state.includePaidOnes" />
     </div>
   </div>
 </template>

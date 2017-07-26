@@ -2,7 +2,9 @@
   <div class="debt-item" :class="debt.status === 'paid' ? 'debt-item--paid' : 'debt-item'">
     <p>{{debt.amount}}€</p>
     <p>{{debt.client}}</p>
-    <p>{{debt.refundAt}}</p>
+    <p v-if="debt.status === 'paid'">Remboursé</p>
+    <p v-else>Remboursement {{moment()}}</p>
+
     <br />
     <button @click="$emit('debtEdit', debt)" class="button button--neutral">Edit</button>
     <button v-if="debt.status === 'pending'"  @click="payDebt" class="button">Paid</button>
@@ -12,6 +14,7 @@
 
 <script>
 import {db} from '../../firebase';
+import moment from 'moment';
 
 export default {
   props: {
@@ -29,6 +32,9 @@ export default {
       db.ref('users/' + this.$store.state.user.uid + '/debts/' + this.debt.id).update({
         "status": "pending"
       });
+    },
+    moment() {
+      return moment(this.debt.refundAt).lang("fr").endOf().fromNow();
     },
   }
 }

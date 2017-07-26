@@ -32,7 +32,7 @@ export default {
     return {
       client: '',
       amount: 0,
-      refundAt: Date()
+      refundAt: null
     }
   },
   components: {
@@ -44,7 +44,7 @@ export default {
       db.ref('users/' + vm.$store.state.user.uid + '/debts').push({
         "amount": this.amount,
         "client": this.client,
-        "createdAt": Date(),
+        "createdAt": new Date().getTime(),
         "mode": 'DebtItem',
         "refundAt": this.refundAt,
         "id": 'bobo',

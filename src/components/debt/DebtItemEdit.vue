@@ -1,10 +1,14 @@
 <template>
     <div class="debt-item">
-      <input v-model.number="debt.amount" type="number"/>
-      <input v-model="debt.client" type="text" />
-      <input v-model="debt.refundAt" type="date" />
-      <button @click="editDebt" class="button">Save</button>
-      <button @click="deleteDebt" class="button button--danger">Delete</button>
+      <div>
+        <input v-model.number="debt.amount" type="number"/>
+        <input v-model="debt.client" type="text" />
+        <input v-model="debt.refundAt" type="date" />
+      </div>
+      <div>
+        <button @click="editDebt" class="button">Save</button>
+        <button @click="deleteDebt" class="button button--danger">Delete</button>
+      </div>
     </div>
 </template>
 
