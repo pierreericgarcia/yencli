@@ -26,10 +26,14 @@ export default {
   computed: {
     debtsFiltering() {
       if (this.$store.state.includePaidOnes === true) {
-        return this.debts;
+        return this.debts.sort(function(a, b) {
+          return a.refundAt > b.refundAt;
+        });
       } else {
         return this.debts.filter(function(debt) {
           return debt.status === "pending";
+        }).sort(function(a, b) {
+          return a.refundAt > b.refundAt;
         });
       }
     }
