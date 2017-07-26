@@ -1,7 +1,9 @@
 <template>
   <div>
-    <HeaderBar :debts="debts"></HeaderBar>
-    <DebtList :debts="debts">></DebtList>
+    <div>
+      <HeaderBar :debts="debts"></HeaderBar>
+      <DebtList :debts="debts"></DebtList>
+    </div>
   </div>
 </template>
 
@@ -17,11 +19,10 @@ export default {
   },
   components: {
     HeaderBar,
-    DebtList
+    DebtList,
   }
 }
 </script>
 
 <style>
-
 </style>

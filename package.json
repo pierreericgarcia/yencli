@@ -16,6 +16,7 @@
     "vue-clickaway": "^2.1.0",
     "vue-instant": "^1.0.0",
     "vue-router": "^2.7.0",
+    "vue-spinner": "^1.0.2",
     "vuefire": "^1.4.3",
     "vuex": "^2.3.1"
   },

@@ -6,9 +6,11 @@
       <input v-model="email" type="text"/>
       <label>password:</label>
       <input v-model="password" type="password"/>
-      <button @click.prevent="signIn">Sign In</button>
+      <button @click.prevent="signIn" class="button">Sign In</button>
     </form>
-    Need an account ? Sign up <button @click="$store.state.haveAccount = false">here</button>.
+    <p>
+      Need an account ? Sign up <a @click="$store.state.haveAccount = false">here</a>.
+    </p>
   </div>
 </template>
 

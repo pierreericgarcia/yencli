@@ -1,10 +1,10 @@
 <template>
   <div class="debt-item">
-    <p>{{debt.amount}}</p>
+    <p>{{debt.amount}}€</p>
     <p>{{debt.client}}</p>
     <p>{{debt.refundAt}}</p>
-    <button @click="$emit('debtEdit', debt)">Edit</button>
-    <button @click="payDebt">Paid</button>
+    <button @click="$emit('debtEdit', debt)" class="button button--neutral">Edit</button>
+    <button @click="payDebt" class="button">Paid</button>
   </div>
 </template>
 
@@ -29,7 +29,8 @@ export default {
 
 <style>
   .debt-item {
-    padding: 20px;
+    margin: 1.4rem;
+    padding: 2rem;
     font-size: 1.6rem;
     border: .1rem solid black;
   }

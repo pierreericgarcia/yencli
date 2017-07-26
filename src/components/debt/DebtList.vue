@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-content">
     <div>
       <transition-group name="slide" appear>
         <component v-for="debt in debtsFiltering" :debt="debt" :is="debt.mode" :key="debt.id" @debtEdit="debt.mode = 'DebtItemEdit'" @debtSave="debt.mode = 'DebtItem'">
@@ -38,6 +38,13 @@ export default {
 </script>
 
 <style>
+.page-content {
+  margin: 0 auto;
+  max-width: 70rem;
+  padding: 1.4rem;
+  background-color: white;
+}
+
 .slide-enter {
   opacity: 0;
 }

@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="header-debt">
-      <p>
-        Total: {{computeAmount()}}€
+      <p class="total-amount">
+        Total: <span>{{computeAmount()}}€</span>
       </p>
-      <label>Montrer les dettes payées : </label><input type="checkbox" v-model="$store.state.includePaidOnes" />
+      <label>Montrer les creds payées : </label><input type="checkbox" v-model="$store.state.includePaidOnes" />
     </div>
   </div>
 </template>
@@ -44,5 +44,14 @@ export default {
     width: 30%;
     margin: auto;
     text-align: center;
+  }
+
+  .total-amount {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .total-amount span {
+    color: #22b573;
   }
 </style>

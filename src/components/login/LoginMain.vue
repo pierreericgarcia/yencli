@@ -45,4 +45,14 @@ h3 {
   display: flex;
   flex-direction: column;
 }
+
+.boxed-view__box p {
+  font-size: 1.2rem;
+}
+
+.boxed-view__box a {
+  color: #22b573;
+  text-decoration: underline;
+  cursor: pointer;
+}
 </style>

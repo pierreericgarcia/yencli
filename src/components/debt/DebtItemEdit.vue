@@ -4,7 +4,8 @@
       <input v-model.number="debt.amount" type="number"/>
       <input v-model="debt.client" type="text" />
       <input v-model="debt.refundAt" type="text" />
-      <button @click="editDebt">Save</button>
+      <button @click="editDebt" class="button">Save</button>
+      <button @click="deleteDebt" class="button button--danger">Delete</button>
     </div>
   </div>
 </template>
@@ -27,6 +28,9 @@ export default {
           "refundAt": this.debt.refundAt
         });
         this.$emit('debtSave', this.debt);
+    },
+    deleteDebt() {
+      db.ref('users/' + this.$store.state.user.uid + '/debts/' + this.debt.id).remove();
     }
   }
 }

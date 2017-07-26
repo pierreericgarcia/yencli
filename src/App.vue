@@ -3,7 +3,9 @@
     <transition name="fade" mode="out-in">
       <component :is="Object.keys($store.state.user).length === 0 ? 'NavBarLogin' : 'NavBar'"></component>
     </transition>
-    <router-view v-if="$store.state.user !== null" :debts="debts"></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view v-if="$store.state.user !== null" :debts="debts"></router-view>
+    </transition>
   </div>
 </template>
 
@@ -45,15 +47,40 @@ export default {
 </script>
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
+}
 
-  html {
-    font-family: 'Poppins';
-    font-size: 62.5%;
-  }
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Poppins';
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-weight: 300;
+  margin-bottom: 1.4rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.8rem;
+}
+
+a {
+  color: black;
+}
+
+input[type=text], input[type=email], input[type=password], input[type=number], input[type=date] {
+  border: 1px solid #444444;
+  font-size: 1.6rem;
+  margin-bottom: 1.4rem;
+  padding: 1rem;
+}
 
   .fade-enter {
   opacity: 0;
@@ -71,4 +98,25 @@ export default {
   transition: opacity 0.2s;
   opacity: 0;
 }
+
+.button {
+  background-color: #22b573;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-bottom: 1.4rem;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+.button--danger {
+  background-color: #c1272d;
+}
+
+.button--neutral {
+  background-color: #666666;
+}
+
 </style>
