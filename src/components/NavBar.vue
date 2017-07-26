@@ -12,21 +12,21 @@
           src="../assets/list.svg"
           height="30px"
           width="30px" />
-          Mes creds
+          <span>Mes creds</span>
       </router-link>
       <router-link tag="div" to="/creator" class="nav-item">
         <img
         src="../assets/plus.svg"
         height="30px"
         width="30px" />
-        Nouveau cred
+        <span>Nouveau cred</span>
       </router-link>
       <router-link tag="div" to="/signin" class="nav-item" @click.native="signOut">
         <img
         src="../assets/power.svg"
         height="30px"
         width="30px" />
-        Se déconnecter
+        <span>Se déconnecter</span>
       </router-link>
     </div>
   </div>
@@ -69,5 +69,11 @@ export default {
 
   img {
     margin-right: 10px;
+  }
+
+  @media screen and (max-width: 640px) {
+    .nav-item span {
+      display: none;
+    }
   }
 </style>

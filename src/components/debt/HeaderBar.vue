@@ -41,7 +41,7 @@ export default {
   .header-debt {
     padding: 20px;
     font-size: 1.8rem;
-    width: 30%;
+    width: 70%;
     margin: auto;
     text-align: center;
   }
