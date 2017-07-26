@@ -62,6 +62,7 @@ export default {
   animation: slide-out 0.5s ease-out forwards;
   transition: opacity 0.5s;
   opacity: 0;
+  position: absolute;
 }
 
 .slide-move {

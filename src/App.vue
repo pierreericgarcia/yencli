@@ -112,7 +112,7 @@ input[type=text], input[type=email], input[type=password], input[type=number], i
 }
 
 .button--danger {
-  background-color: #c1272d;
+  background-color: #BE5356;
 }
 
 .button--neutral {

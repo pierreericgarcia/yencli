@@ -1,5 +1,5 @@
 <template>
-  <div class="debt-item">
+  <div class="debt-item" :class="debt.status === 'paid' ? 'debt-item--paid' : ''">
     <p>{{debt.amount}}€</p>
     <p>{{debt.client}}</p>
     <p>{{debt.refundAt}}</p>
@@ -33,5 +33,14 @@ export default {
     padding: 2rem;
     font-size: 1.6rem;
     border: .1rem solid black;
+    border-radius: 15px;
+  }
+
+  .debt-item--paid {
+    margin: 1.4rem;
+    padding: 2rem;
+    font-size: 1.6rem;
+    border: .1rem solid black;
+    background-color: lightgreen;
   }
 </style>

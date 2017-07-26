@@ -1,6 +1,7 @@
 <template>
   <div class="boxed-view">
     <div class="boxed-view__box">
+      <h3>Nouveau cred :</h3>
       <form class="boxed-view__form">
         <label>Client :</label>
         <input v-model="client" type="text" />
@@ -39,7 +40,7 @@ export default {
         "createdAt": Date(),
         "mode": 'DebtItem',
         "refundAt": this.refundAt,
-        "id": '',
+        "id": 'bobo',
         "status": "pending"
       }).then(function(snapshot) {
         var debtKey = snapshot.key;
@@ -67,6 +68,10 @@ export default {
   padding: 2.4rem;
   text-align: center;
   width: 24rem;
+}
+
+.boxed-view__box h3 {
+  margin-bottom: 1.4rem;
 }
 
 .boxed-view__form {
