@@ -1,8 +1,9 @@
 <template>
-  <div class="debt-item" :class="debt.status === 'paid' ? 'debt-item--paid' : ''">
+  <div class="debt-item" :class="debt.status === 'paid' ? 'debt-item--paid' : 'debt-item'">
     <p>{{debt.amount}}€</p>
     <p>{{debt.client}}</p>
     <p>{{debt.refundAt}}</p>
+    <br />
     <button @click="$emit('debtEdit', debt)" class="button button--neutral">Edit</button>
     <button v-if="debt.status === 'pending'"  @click="payDebt" class="button">Paid</button>
     <button v-else  @click="unpayDebt" class="button button--danger">Unpaid</button>
@@ -48,6 +49,6 @@ export default {
     padding: 2rem;
     font-size: 1.6rem;
     border: .1rem solid black;
-    background-color: lightgreen;
+    background-color: #e1fde1;
   }
 </style>

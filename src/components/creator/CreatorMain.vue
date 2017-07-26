@@ -14,6 +14,12 @@
         <br />
         <button @click.prevent="createDebt" class="button">Create</button>
       </form>
+      <modal name="success" :width="'40%'">
+        <div class="success-modal">
+          <img src="../../assets/check.svg"/>
+          <p>Nouveau cred créé !</p>
+        </div>
+      </modal>
     </div>
   </div>
 </template>
@@ -29,10 +35,11 @@ export default {
       refundAt: Date()
     }
   },
+  components: {
+  },
   methods: {
     createDebt() {
       var vm = this;
-      console.log('hey');
       var debtKey = '';
       db.ref('users/' + vm.$store.state.user.uid + '/debts').push({
         "amount": this.amount,
@@ -48,6 +55,14 @@ export default {
           "id": debtKey
         });
       });
+      this.openModal();
+    },
+    openModal() {
+      var vm = this;
+      this.$modal.show('success');
+      setTimeout(function() {
+        vm.$modal.hide('success');
+      }, 500);
     }
   }
 }
@@ -78,4 +93,32 @@ export default {
   display: flex;
   flex-direction: column;
 }
+
+.success-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-modal {
+  font-size: 2rem;
+}
+
+.success-modal img {
+  width: 20rem;
+  height: 20rem;
+}
+
+@media screen and (max-width: 640px) {
+  .success-modal img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .success-modal {
+    font-size: 1rem;
+  }
+}
+
 </style>

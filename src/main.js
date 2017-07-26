@@ -5,7 +5,9 @@ import {routes} from './routes';
 import './firebase';
 import VueFire from 'vuefire';
 import { store } from "./store/store";
+import vmodal from 'vue-js-modal';
 
+Vue.use(vmodal);
 Vue.use(VueFire);
 Vue.use(VueRouter);
 

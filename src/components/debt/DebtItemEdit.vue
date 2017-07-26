@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="debt-item">
       <input v-model.number="debt.amount" type="number"/>
       <input v-model="debt.client" type="text" />
@@ -7,7 +6,6 @@
       <button @click="editDebt" class="button">Save</button>
       <button @click="deleteDebt" class="button button--danger">Delete</button>
     </div>
-  </div>
 </template>
 
 <script>

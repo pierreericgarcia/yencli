@@ -76,7 +76,7 @@ a {
 }
 
 input[type=text], input[type=email], input[type=password], input[type=number], input[type=date] {
-  border: 1px solid #444444;
+  border: 1px solid #cccccc;
   font-size: 1.6rem;
   margin-bottom: 1.4rem;
   padding: 1rem;
