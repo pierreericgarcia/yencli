@@ -52,6 +52,6 @@ MIT
 ---
 
 > GitHub [@dokeezy](https://github.com/Dokeezy) &nbsp;&middot;&nbsp;
-> Facebook [Pierre-Eric Garcia](https://www.facebook.com/pierreeric.garcia.1)
-> LinkedIn [Pierre-Eric Garcia](https://www.linkedin.com/in/pierre-eric-garcia)
+> Facebook [Pierre-Eric Garcia](https://www.facebook.com/pierreeric.garcia.1) &nbsp;&middot;&nbsp;
+> LinkedIn [Pierre-Eric Garcia](https://www.linkedin.com/in/pierre-eric-garcia) &nbsp;&middot;&nbsp;
 > Medium [@garciape](https://medium.com/@garciape)
