@@ -55,6 +55,9 @@ export default {
           "id": debtKey
         });
       });
+      this.client = '';
+      this.amount = 0;
+      this.refundAt = null;
       this.openModal();
     },
     openModal() {
