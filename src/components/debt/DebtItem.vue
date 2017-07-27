@@ -1,7 +1,7 @@
 <template>
   <div class="debt-item" :class="debt.status === 'paid' ? 'debt-item--paid' : 'debt-item'">
-    <p>{{debt.amount}}€</p>
-    <p>{{debt.client}}</p>
+    <p class="debt-detail--amount">{{debt.amount}}€</p>
+    <p class="debt-detail--client">{{debt.client}}</p>
     <p v-if="debt.status === 'paid'">Remboursé</p>
     <p v-else>Remboursement {{moment()}}</p>
 
@@ -57,4 +57,10 @@ export default {
     border: .1rem solid black;
     background-color: #e1fde1;
   }
+
+  .debt-detail--amount {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
 </style>
