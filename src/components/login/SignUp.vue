@@ -9,7 +9,7 @@
       <button @click.prevent="signUp" class="button">Sign Up</button>
     </form>
     <p>
-      Already have an account ? Sign in <a @click="$store.state.haveAccount = true">here</a>.
+      T'as déjà un compte ? <a @click="$store.state.haveAccount = true">Connecte-toi</a>.
     </p>
   </div>
 </template>

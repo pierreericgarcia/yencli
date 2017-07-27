@@ -2,7 +2,8 @@
   <div class="page-content">
     <div>
       <transition-group name="slide" appear>
-        <component v-for="debt in debtsFiltering" :debt="debt" :is="debt.mode" :key="debt.id" @debtEdit="debt.mode = 'DebtItemEdit'" @debtSave="debt.mode = 'DebtItem'">
+        <EmptyList :key="'emptyItem'" v-if="debtsFiltering.length === 0"></EmptyList>
+        <component v-else v-for="debt in debtsFiltering" :debt="debt" :is="debt.mode" :key="debt.id" @debtEdit="debt.mode = 'DebtItemEdit'" @debtSave="debt.mode = 'DebtItem'">
         </component>
       </transition-group>
     </div>
@@ -12,6 +13,7 @@
 <script>
 import DebtItem from "./DebtItem.vue";
 import DebtItemEdit from "./DebtItemEdit.vue";
+import EmptyList from "./EmptyList.vue";
 
 export default {
   props: {
@@ -21,7 +23,8 @@ export default {
   },
   components: {
     DebtItem,
-    DebtItemEdit
+    DebtItemEdit,
+    EmptyList
   },
   computed: {
     debtsFiltering() {
