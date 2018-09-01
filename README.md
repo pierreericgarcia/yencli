@@ -14,6 +14,8 @@
 
 ## Key Features
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pierreericgarcia/yencli.svg)](https://greenkeeper.io/)
+
 * Write and edit debts
 * Manage your refund dates
 * All of your debts sync with all your devices
